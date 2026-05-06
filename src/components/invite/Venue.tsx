@@ -2,17 +2,18 @@ import { motion } from "framer-motion";
 import { MapPin, Navigation } from "lucide-react";
 
 const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=High+Street+Mall+Kapurbawdi+Junction+Thane+West+400607";
+  "https://www.google.com/maps/search/?api=1&query=Mahavir+Premium+Banquet+High+Street+Mall+Kapurbawdi+Thane+West";
 
 export function Venue() {
   return (
     <section className="py-20 px-6 overflow-visible">
+      
       {/* Heading */}
       <div className="text-center mb-10">
-        <p className="font-script text-4xl md:text-5xl leading-[1.2] md:leading-[1.1] text-gradient-gold pt-2">
+        <p className="font-script text-4xl md:text-5xl leading-[1.2] text-gradient-gold pt-2">
           The Venue
         </p>
-        <p className="mt-2 tracking-[0.2em] md:tracking-[0.3em] text-xs uppercase text-[var(--muted-foreground)]">
+        <p className="mt-2 tracking-[0.2em] md:tracking-[0.3em] text-xs uppercase text-[var(--foreground)]/70">
           Where it all begins
         </p>
       </div>
@@ -30,14 +31,19 @@ export function Venue() {
           <MapPin className="w-7 h-7 text-white" />
         </div>
 
-        {/* Title */}
-        <h3 className="font-serif-display text-2xl leading-[1.3] text-[var(--foreground)] mb-3">
-          High Street Mall
+        {/* ✅ Hall Name (MAIN) */}
+        <h3 className="font-serif-display text-2xl md:text-3xl leading-[1.3] text-[var(--foreground)] mb-2 font-semibold">
+          Mahavir Premium Banquet
         </h3>
 
+        {/* Sub location */}
+        <p className="text-sm md:text-base text-[var(--foreground)]/80 mb-3">
+          High Street Mall
+        </p>
+
         {/* Address */}
-        <p className="font-body text-sm md:text-base leading-[1.7] text-[var(--muted-foreground)] mb-6 px-2">
-          3rd floor, Kapurbawdi Junction,<br />
+        <p className="font-body text-sm md:text-base leading-[1.7] text-[var(--foreground)]/70 mb-6 px-2">
+          3rd Floor, Kapurbawdi Junction,<br />
           Near Star Cinema, Samata Nagar,<br />
           Kapurbawdi, Majiwada,<br />
           Thane West – 400607

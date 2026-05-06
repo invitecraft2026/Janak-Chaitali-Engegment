@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/newhero.jpeg";
+import heroBg from "@/assets/hero-bg.jpg";
 import { CornerFloral } from "./FloralDivider";
 
 export function Hero() {
