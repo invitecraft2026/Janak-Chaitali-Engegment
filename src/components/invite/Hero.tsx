@@ -4,17 +4,23 @@ import { CornerFloral } from "./FloralDivider";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-visible">
+      {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
+
+      {/* Soft Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-[oklch(0.92_0.05_350)]/70" />
 
+      {/* Floral Decorations */}
       <CornerFloral className="absolute top-0 left-0 w-32 md:w-48 -translate-x-4 -translate-y-4 opacity-80" />
       <CornerFloral className="absolute bottom-0 right-0 w-32 md:w-48 translate-x-4 translate-y-4 rotate-180 opacity-80" />
 
+      {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl">
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -24,15 +30,17 @@ export function Hero() {
           ✦ Engagement Ceremony ✦
         </motion.p>
 
+        {/* Bride Name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1.2 }}
-          className="font-script text-7xl md:text-9xl text-gradient-gold leading-none mb-2"
+          className="font-script text-7xl md:text-9xl text-gradient-gold leading-[1.2] md:leading-[1.1] tracking-wide drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)] mb-2 pt-2"
         >
           Chaitali
         </motion.h1>
 
+        {/* Divider */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -40,19 +48,23 @@ export function Hero() {
           className="my-3 flex items-center justify-center gap-4"
         >
           <div className="h-px w-16 bg-[var(--gold)]" />
-          <span className="font-serif-display italic text-2xl md:text-3xl text-[var(--foreground)]">&</span>
+          <span className="font-serif-display italic text-2xl md:text-3xl text-[var(--foreground)]">
+            &
+          </span>
           <div className="h-px w-16 bg-[var(--gold)]" />
         </motion.div>
 
+        {/* Groom Name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 1.2 }}
-          className="font-script text-7xl md:text-9xl text-gradient-gold leading-none mb-8"
+          className="font-script text-7xl md:text-9xl text-gradient-gold leading-[1.2] md:leading-[1.1] tracking-wide drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)] mb-8 pb-2"
         >
           Janak
         </motion.h1>
 
+        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +74,9 @@ export function Hero() {
           Together with their families, invite you to celebrate their engagement
         </motion.p>
 
-        {/* <motion.div
+        {/* Optional Date Badge */}
+        {/* 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.3, duration: 1 }}
@@ -71,7 +85,8 @@ export function Hero() {
           <p className="font-serif-display tracking-[0.3em] text-sm uppercase text-[var(--foreground)]">
             06 · June · 2026
           </p>
-        </motion.div> */}
+        </motion.div> 
+        */}
       </div>
     </section>
   );

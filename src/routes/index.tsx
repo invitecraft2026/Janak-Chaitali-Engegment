@@ -9,6 +9,7 @@ import { Venue } from "@/components/invite/Venue";
 import { MusicToggle } from "@/components/invite/MusicToggle";
 import { Petals } from "@/components/invite/Petals";
 import { FloralDivider } from "@/components/invite/FloralDivider";
+import { StorySection } from "@/components/invite/StorySection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -36,6 +37,7 @@ function Index() {
           <FloralDivider />
           <ScratchCard />
           <FloralDivider />
+          <StorySection/>
           <Venue />
           <footer className="py-10 text-center">
             <p className="font-script text-3xl text-gradient-gold">Chaitali & Janak</p>
