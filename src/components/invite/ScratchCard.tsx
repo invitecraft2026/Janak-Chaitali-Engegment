@@ -13,19 +13,15 @@ export function ScratchCard() {
 
     const details = `
 You are invited to celebrate the engagement of Chaitali & Janak 💍
-
-Venue:
-3rd floor, High Street Mall,
-Kapurbawdi Junction, Near Star Cinema,
-Samata Nagar, Kapurbawdi,
-Majiwada, Thane West - 400607
+Join us for this beautiful occasion.
     `;
 
     const location =
-      "3rd floor, High Street Mall, Kapurbawdi Junction, Thane West 400607";
+      "Mahavir Premium Banquet, 3rd floor, High Street Mall, Thane West 400607";
 
-    const startDate = "20260606T100000"; // adjust time if needed
-    const endDate = "20260606T130000";
+    // ✅ 5:00 PM IST = 11:30 AM UTC
+    const startDate = "20260606T113000Z";
+    const endDate = "20260606T143000Z";
 
     return `https://www.google.com/calendar/render?action=TEMPLATE
 &text=${encodeURIComponent(title)}
@@ -47,7 +43,7 @@ Majiwada, Thane West - 400607
     canvas.height = rect.height * dpr;
     ctx.scale(dpr, dpr);
 
-    // 🎨 Gradient scratch layer
+    // 🎨 Gradient layer
     const grad = ctx.createLinearGradient(0, 0, rect.width, rect.height);
     grad.addColorStop(0, "#e8b4d4");
     grad.addColorStop(0.5, "#d4a3e0");
@@ -56,8 +52,8 @@ Majiwada, Thane West - 400607
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, rect.width, rect.height);
 
-    // ✍️ Instruction text
-    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    // ✍️ Instruction
+    ctx.fillStyle = "rgba(255,255,255,0.9)";
     ctx.font = "italic 18px 'Playfair Display', serif";
     ctx.textAlign = "center";
     ctx.fillText("✦ Scratch to Reveal ✦", rect.width / 2, rect.height / 2 - 10);
@@ -97,16 +93,12 @@ Majiwada, Thane West - 400607
       if (cleared / (img.length / 80) > 0.45 && !revealed) {
         setRevealed(true);
 
-        // 🎉 Confetti blast
         confetti({
           particleCount: 140,
           spread: 90,
           origin: { y: 0.6 },
           colors: ["#e8b4d4", "#d4a3e0", "#f5d3b8", "#ffffff"],
         });
-
-        // 🔊 Optional sound (uncomment if you add file)
-        // new Audio("/reveal.mp3").play();
       }
     };
 
@@ -152,25 +144,24 @@ Majiwada, Thane West - 400607
         className="relative max-w-md mx-auto rounded-3xl overflow-hidden shadow-soft glass p-1"
       >
         <div className="relative rounded-3xl overflow-hidden bg-white/80">
-          <div className="p-8 text-center min-h-[300px] flex flex-col justify-center">
+          <div className="p-8 text-center min-h-[260px] flex flex-col justify-center">
             <p className="font-script text-3xl text-gradient-gold mb-2">
               Engagement Ceremony
             </p>
 
             <div className="h-px w-20 bg-[var(--gold)] mx-auto my-3" />
 
+            {/* ✅ Date */}
             <p className="font-serif-display text-lg tracking-wider">
               06 June 2026
             </p>
 
-            <p className="italic text-sm mt-4 leading-relaxed">
-              3rd floor, High Street Mall,<br />
-              Kapurbawdi Junction, Near Star Cinema,<br />
-              Samata Nagar, Kapurbawdi,<br />
-              Majiwada, Thane West – 400607
+            {/* ✅ Time Added */}
+            <p className="mt-2 text-sm tracking-widest text-[var(--muted-foreground)] uppercase">
+              5:00 PM
             </p>
 
-            {/* ✅ Add to Calendar Button */}
+            {/* ✅ Button */}
             {revealed && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
