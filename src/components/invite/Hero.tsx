@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/newhero.jpeg";
 import { CornerFloral } from "./FloralDivider";
 
 export function Hero() {
@@ -62,7 +62,7 @@ export function Hero() {
           Together with their families, invite you to celebrate their engagement
         </motion.p>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.3, duration: 1 }}
@@ -71,7 +71,7 @@ export function Hero() {
           <p className="font-serif-display tracking-[0.3em] text-sm uppercase text-[var(--foreground)]">
             06 · June · 2026
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

@@ -23,21 +23,64 @@ function NotFoundComponent() {
     </div>
   );
 }
-
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+
       { title: "Chaitali & Janak — Engagement Invitation" },
-      { name: "description", content: "Together with their families, Chaitali & Janak invite you to celebrate their engagement on June 6, 2026." },
+      {
+        name: "description",
+        content:
+          "Together with their families, Chaitali & Janak invite you to celebrate their engagement on June 6, 2026.",
+      },
       { name: "author", content: "Chaitali & Janak" },
-      { property: "og:title", content: "Chaitali & Janak — Engagement Invitation" },
-      { property: "og:description", content: "Join us on June 6, 2026 in Thane West for our engagement ceremony." },
+
+      // ✅ Open Graph (WhatsApp / Facebook / LinkedIn)
+      {
+        property: "og:title",
+        content: "Chaitali & Janak — Engagement Invitation",
+      },
+      {
+        property: "og:description",
+        content:
+          "Join us on June 6, 2026 in Thane West for our engagement ceremony.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+
+      // 🔥 ADD THIS (Preview Image)
+      {
+        property: "og:image",
+        content: "https://yourdomain.com/preview.jpg",
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      {
+        property: "og:image:height",
+        content: "630",
+      },
+
+      // ✅ Twitter Preview
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      {
+        name: "twitter:title",
+        content: "Chaitali & Janak — Engagement Invitation",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Join us on June 6, 2026 in Thane West for our engagement ceremony.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://yourdomain.com/preview.jpg",
+      },
     ],
+
     links: [
       {
         rel: "stylesheet",
@@ -45,11 +88,7 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  shellComponent: RootShell,
-  component: RootComponent,
-  notFoundComponent: NotFoundComponent,
 });
-
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
