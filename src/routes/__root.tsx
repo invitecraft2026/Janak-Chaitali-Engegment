@@ -23,6 +23,7 @@ function NotFoundComponent() {
     </div>
   );
 }
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -88,7 +89,11 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  shellComponent: RootShell,
+  component: RootComponent,
+  notFoundComponent: NotFoundComponent,
 });
+
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
