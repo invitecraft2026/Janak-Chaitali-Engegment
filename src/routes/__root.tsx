@@ -1,5 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-
+import heroBg from "@/assets/newhero.jpeg";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -53,7 +53,7 @@ export const Route = createRootRoute({
       // 🔥 ADD THIS (Preview Image)
       {
         property: "og:image",
-        content: "https://yourdomain.com/preview.jpg",
+        content: `https://janak-chaitali-engegment.invitecraft2026.workers.dev/${heroBg}`,
       },
       {
         property: "og:image:width",
@@ -78,7 +78,7 @@ export const Route = createRootRoute({
       },
       {
         name: "twitter:image",
-        content: "https://yourdomain.com/preview.jpg",
+        content: `https://janak-chaitali-engegment.invitecraft2026.workers.dev/${heroBg}`,
       },
     ],
 
